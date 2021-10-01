@@ -40,6 +40,7 @@ export const List = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-top: 1rem;
 
   @media (max-width: 978px) {
     grid-template-columns: repeat(2, 1fr);
