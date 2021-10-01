@@ -8,6 +8,14 @@ export const Card = styled.div`
   background: var(--shape);
   padding: 1rem;
   border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 1px 4px rgb(0 0 0 / 5%);
+  border: 1px solid #f2f2f2;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border: 1px solid #dedede;
+  }
 
   h2 {
     text-transform: capitalize;

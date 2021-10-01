@@ -39,7 +39,7 @@ export const Input = styled.input`
 export const List = styled.main`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 
   @media (max-width: 978px) {
     grid-template-columns: repeat(2, 1fr);

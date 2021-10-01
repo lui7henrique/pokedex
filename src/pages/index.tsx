@@ -4,7 +4,7 @@ import { api } from "services/api"
 import { HomeTemplate } from "templates/Home"
 
 // initial response with pokemons
-type IDataResponse = {
+export type IDataResponse = {
   count: number
   next: string | null
   previous: string | null
