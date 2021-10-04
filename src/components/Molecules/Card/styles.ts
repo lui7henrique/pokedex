@@ -6,15 +6,46 @@ export const Card = styled.div`
   justify-content: space-between;
   width: 100%;
   background: var(--shape);
+
   padding: 1rem;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 1px 4px rgb(0 0 0 / 5%);
-  border: 1px solid #f2f2f2;
   transition: all 0.2s ease-in-out;
 
+  &:after,
+  &:before {
+    border-radius: 10px;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: transform 0.35s ease-in-out;
+  }
+
+  &:before {
+    border-left: 1px solid ${(props) => props.theme.border};
+    border-right: 1px solid ${(props) => props.theme.border};
+    transform: scaleY(0);
+  }
+
+  &:after {
+    border-bottom: 1px solid ${(props) => props.theme.border};
+    border-top: 1px solid ${(props) => props.theme.border};
+    transform: scaleX(0);
+  }
+
+  &:hover:before {
+    transform: scaleY(1);
+  }
+  &:hover:after {
+    transform: scaleX(1);
+  }
+
   &:hover {
-    border: 1px solid #dedede;
+    border: 2px solid var(--border);
   }
 
   h2 {

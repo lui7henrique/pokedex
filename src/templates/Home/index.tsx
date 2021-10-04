@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { CircularProgress } from "@chakra-ui/progress"
 import * as material from "@styled-icons/material"
 import { Searchbar } from "components/Atoms/Searchbar"
 import { Card } from "components/Molecules/Card"
@@ -60,9 +61,21 @@ export function HomeTemplate({
 
         <InfiniteScroll
           dataLength={pokemons.length}
-          next={handleLoadMorePokemons}
+          next={() => setTimeout(handleLoadMorePokemons, 1000)}
           hasMore={hasMore}
-          loader={<></>}
+          loader={
+            <CircularProgress
+              isIndeterminate
+              color="var(--primary)"
+              mt="40"
+              alignSelf="center"
+            />
+          }
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
         >
           <S.List>
             {pokemons.map((pokemon, index) => {

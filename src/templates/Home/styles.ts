@@ -7,6 +7,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  .chakra-progress__track {
+    stroke: var(--shape);
+  }
 `
 
 export const Header = styled.div`
@@ -21,13 +25,14 @@ export const Header = styled.div`
 `
 
 export const Icon = styled.div`
+  display: none;
   width: 800px;
   position: fixed;
   right: 0;
-  top: 0;
+  top: 25%;
   transform: translate(50%, -10%) rotate(0deg);
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.03;
 `
 
 export const Input = styled.input`
