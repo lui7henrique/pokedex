@@ -13,39 +13,80 @@ export const Card = styled.div`
   box-shadow: 0px 1px 4px rgb(0 0 0 / 5%);
   transition: all 0.2s ease-in-out;
 
-  &:after,
-  &:before {
-    border-radius: 10px;
-    bottom: 0;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: transform 0.35s ease-in-out;
+  &.grass {
+    background: #9bcc50a8;
   }
 
-  &:before {
-    border-left: 1px solid ${(props) => props.theme.border};
-    border-right: 1px solid ${(props) => props.theme.border};
-    transform: scaleY(0);
+  &.poison {
+    background: #b97fc9a8;
   }
 
-  &:after {
-    border-bottom: 1px solid ${(props) => props.theme.border};
-    border-top: 1px solid ${(props) => props.theme.border};
-    transform: scaleX(0);
+  &.psychic {
+    background: #f366b9a8;
   }
 
-  &:hover:before {
-    transform: scaleY(1);
+  &.ice {
+    background: #51c4e7a8;
   }
-  &:hover:after {
-    transform: scaleX(1);
+
+  &.fire {
+    background: #fd7d24a8;
+  }
+
+  &.water {
+    background: #4592c4a8;
+  }
+
+  &.electric {
+    background: #dabd06a8;
+  }
+  &.bug {
+    background: #729f40a8;
+  }
+  &.rock {
+    background: #a38d21a8;
+  }
+  &.steel {
+    background: #648283a8;
+  }
+
+  &.ground {
+    background: linear-gradient(
+      to bottom,
+      #a38d21a8 50%,
+      rgba(95, 95, 95, 0.685) 50%
+    );
+  }
+
+  &.dragon {
+    background: linear-gradient(to bottom, #53a4cfa8 50%, #f16e57a8 50%);
+  }
+
+  &.ghost {
+    background: #623aaa81;
+  }
+
+  &.dark {
+    background: black;
+  }
+
+  &.flying {
+    background: linear-gradient(
+      to bottom,
+      #3dc7efa8 50%,
+      rgba(95, 95, 95, 0.685) 50%
+    );
+  }
+
+  &.fighting {
+    background: #a04208a8;
+  }
+  &.fairy {
+    background: #fdb9e9a8;
   }
 
   &:hover {
-    border: 2px solid var(--border);
+    filter: brightness(0.9);
   }
 
   h2 {
@@ -60,91 +101,18 @@ export const Card = styled.div`
 `
 
 export const Infos = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-
   h4 {
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
     display: inline-block;
     text-transform: capitalize;
     font-weight: bold;
     background: red;
-    border-radius: 20px;
-    padding: 0.2rem;
+    border-radius: 5px;
+    padding: 0.5rem;
     text-align: center;
     color: white;
-    background: rgba(95, 95, 95, 0.685);
+    background: rgba(0, 0, 0, 0.1);
     font-size: 0.8rem;
-
-    &.grass {
-      background: #9bcc50a8;
-    }
-
-    &.poison {
-      background: #b97fc9a8;
-    }
-
-    &.psychic {
-      background: #f366b9a8;
-    }
-
-    &.ice {
-      background: #51c4e7a8;
-    }
-
-    &.fire {
-      background: #fd7d24a8;
-    }
-
-    &.water {
-      background: #4592c4a8;
-    }
-
-    &.electric {
-      background: #dabd06a8;
-    }
-    &.bug {
-      background: #729f40a8;
-    }
-    &.rock {
-      background: #a38d21a8;
-    }
-    &.steel {
-      background: #648283a8;
-    }
-
-    &.ground {
-      background: linear-gradient(
-        to bottom,
-        #a38d21a8 50%,
-        rgba(95, 95, 95, 0.685) 50%
-      );
-    }
-
-    &.dragon {
-      background: linear-gradient(to bottom, #53a4cfa8 50%, #f16e57a8 50%);
-    }
-    &.ghost {
-      background: #623aaa81;
-    }
-
-    &.dark {
-      background: black;
-    }
-
-    &.flying {
-      background: linear-gradient(
-        to bottom,
-        #3dc7efa8 50%,
-        rgba(95, 95, 95, 0.685) 50%
-      );
-    }
-
-    &.fighting {
-      background: #a04208a8;
-    }
-    &.fairy {
-      background: #fdb9e9a8;
-    }
   }
 `

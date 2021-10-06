@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { CircularProgress } from "@chakra-ui/progress"
 import * as material from "@styled-icons/material"
+import { CircularProgress } from "components/Atoms/CircularProgress"
 import { Searchbar } from "components/Atoms/Searchbar"
 import { Card } from "components/Molecules/Card"
 import { IDataPokemonResponse, IDataResponse } from "pages"
@@ -48,6 +48,15 @@ export function HomeTemplate({
     setPokemons((pokemons) => [...pokemons, ...morePokemons])
   }
 
+  const handleSearchByName = async (name: string) => {
+    try {
+      const response = await api.get(`pokemon/${name}`)
+      console.log(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   return (
     <>
       <S.Icon>
@@ -56,21 +65,14 @@ export function HomeTemplate({
       <S.Container>
         <S.Header>
           <h2>What pokemon are you looking for?</h2>
-          <Searchbar />
+          <Searchbar onChange={(e) => handleSearchByName(e.target.value)} />
         </S.Header>
 
         <InfiniteScroll
           dataLength={pokemons.length}
           next={() => setTimeout(handleLoadMorePokemons, 1000)}
           hasMore={hasMore}
-          loader={
-            <CircularProgress
-              isIndeterminate
-              color="var(--primary)"
-              mt="40"
-              alignSelf="center"
-            />
-          }
+          loader={<CircularProgress />}
           style={{
             display: "flex",
             flexDirection: "column",

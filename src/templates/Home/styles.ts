@@ -9,7 +9,7 @@ export const Container = styled.div`
   gap: 1rem;
 
   .chakra-progress__track {
-    stroke: var(--shape);
+    stroke: none;
   }
 `
 

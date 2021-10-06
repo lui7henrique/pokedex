@@ -1,16 +1,16 @@
 import * as boxiconsRegular from "@styled-icons/boxicons-regular"
+import React from "react"
+import { InputHTMLAttributes } from "react"
 
 import * as S from "./styles"
 
-export function Searchbar() {
+interface ISearchbarProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+export function Searchbar({ ...rest }: ISearchbarProps) {
   return (
     <S.SearchBar>
-      <boxiconsRegular.Search size={40} />
-      <S.Input
-        type="text"
-        placeholder="Search a pokemon"
-        onChange={(e) => console.log(e.target.value)}
-      />
+      <boxiconsRegular.Search size={30} />
+      <S.Input type="text" placeholder="Search a pokemon" {...rest} />
     </S.SearchBar>
   )
 }

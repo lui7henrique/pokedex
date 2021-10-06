@@ -9,7 +9,7 @@ interface ICardProps {
 
 export function Card({ pokemon }: ICardProps) {
   return (
-    <S.Card>
+    <S.Card className={pokemon.types[0].type.name}>
       <S.Infos>
         <h2>{pokemon.name}</h2>
         {pokemon.types.map((type) => {
