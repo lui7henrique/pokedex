@@ -13,6 +13,22 @@ export const Card = styled.div`
   box-shadow: 0px 1px 4px rgb(0 0 0 / 5%);
   transition: all 0.2s ease-in-out;
 
+  h2 {
+    text-transform: capitalize;
+  }
+
+  img {
+    width: 40%;
+    margin-top: -2.5rem;
+    z-index: 10;
+  }
+
+  h5 {
+    opacity: 0.7;
+    font-weight: bold;
+    font-size: 0.6rem;
+  }
+
   &.grass {
     background: #9bcc50a8;
   }
@@ -67,7 +83,7 @@ export const Card = styled.div`
   }
 
   &.dark {
-    background: black;
+    background: #0f0f0f;
   }
 
   &.flying {
@@ -88,16 +104,6 @@ export const Card = styled.div`
   &:hover {
     filter: brightness(0.9);
   }
-
-  h2 {
-    text-transform: capitalize;
-  }
-
-  img {
-    width: 40%;
-    margin-top: -2.2rem;
-    z-index: 10;
-  }
 `
 
 export const Infos = styled.div`
@@ -111,7 +117,7 @@ export const Infos = styled.div`
     border-radius: 5px;
     padding: 0.5rem;
     text-align: center;
-    color: white;
+    color: rgba(255, 255, 255, 0.7);
     background: rgba(0, 0, 0, 0.1);
     font-size: 0.8rem;
   }

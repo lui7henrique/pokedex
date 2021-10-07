@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const lightTheme = {
   background: "#F5F7FA",
-  primary: "#443377",
+  primary: "#8257e5",
   border: "#c9ccd1",
 
   shape: "#E4E7EB",
@@ -12,7 +12,7 @@ export const lightTheme = {
 
 export const darkTheme = {
   background: "#121212",
-  primary: "#443377",
+  primary: "#8257e5",
   border: "#3b3b3b",
 
   shape: "#212121",

@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const SearchBar = styled.div`
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   border-radius: 50px;
   background: var(--shape);
 
@@ -14,6 +14,10 @@ export const SearchBar = styled.div`
   font-size: 1.7rem;
   color: var(--support);
 
+  svg {
+    color: var(--primary);
+  }
+
   h4 {
     font-weight: 700;
   }
@@ -23,7 +27,7 @@ export const Input = styled.input`
   border: none;
   outline: none;
   width: 100%;
-  height: 3rem;
+  height: 2rem;
   background: inherit;
   font-size: 1.3rem;
   font-weight: 500;

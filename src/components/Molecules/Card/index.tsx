@@ -11,6 +11,7 @@ export function Card({ pokemon }: ICardProps) {
   return (
     <S.Card className={pokemon.types[0].type.name}>
       <S.Infos>
+        <h5>#{pokemon.id}</h5>
         <h2>{pokemon.name}</h2>
         {pokemon.types.map((type) => {
           return (

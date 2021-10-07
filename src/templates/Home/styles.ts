@@ -19,8 +19,26 @@ export const Header = styled.div`
   flex-direction: column;
   gap: 1rem;
 
+  h1 {
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 900;
+    background: #670e94;
+    background: -webkit-linear-gradient(
+      to bottom right,
+      #670e94 0%,
+      #8257e5 100%
+    );
+    background: -moz-linear-gradient(to bottom right, #670e94 0%, #8257e5 100%);
+    background: linear-gradient(to bottom right, #670e94 0%, #8257e5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+  }
+
   h2 {
-    font-size: 3rem;
+    margin-top: -1.7rem;
+    font-size: 1.1rem;
   }
 `
 

@@ -19,6 +19,7 @@ export function HomeTemplate({
 }: IHomeTemplateProps) {
   const [pokemons, setPokemons] = useState(initialPokemons)
   const [hasMore, setHasMore] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleLoadMorePokemons = async () => {
     const response = await api.get(
@@ -50,8 +51,19 @@ export function HomeTemplate({
 
   const handleSearchByName = async (name: string) => {
     try {
-      const response = await api.get(`pokemon/${name}`)
-      console.log(response.data)
+      const pokemonResponse = await api.get(`/pokemon/${name}`)
+
+      const pokemonData: IDataPokemonResponse = pokemonResponse.data
+
+      const pokemon = {
+        id: pokemonData.id,
+        name: pokemonData.name,
+        height: pokemonData.height,
+        weight: pokemonData.weight,
+        types: pokemonData.types,
+        sprites: pokemonData.sprites
+      }
+      console.log(pokemon)
     } catch (err) {
       console.log(err)
     }
@@ -64,27 +76,32 @@ export function HomeTemplate({
       </S.Icon>
       <S.Container>
         <S.Header>
+          <h1>Pokedex</h1>
           <h2>What pokemon are you looking for?</h2>
           <Searchbar onChange={(e) => handleSearchByName(e.target.value)} />
         </S.Header>
 
-        <InfiniteScroll
-          dataLength={pokemons.length}
-          next={() => setTimeout(handleLoadMorePokemons, 1000)}
-          hasMore={hasMore}
-          loader={<CircularProgress />}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
-          }}
-        >
-          <S.List>
-            {pokemons.map((pokemon, index) => {
-              return <Card pokemon={pokemon} key={index} />
-            })}
-          </S.List>
-        </InfiniteScroll>
+        {isLoading ? (
+          <CircularProgress />
+        ) : (
+          <InfiniteScroll
+            dataLength={pokemons.length}
+            next={() => setTimeout(handleLoadMorePokemons, 1000)}
+            hasMore={hasMore}
+            loader={<CircularProgress />}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center"
+            }}
+          >
+            <S.List>
+              {pokemons.map((pokemon, index) => {
+                return <Card pokemon={pokemon} key={index} />
+              })}
+            </S.List>
+          </InfiniteScroll>
+        )}
       </S.Container>
     </>
   )

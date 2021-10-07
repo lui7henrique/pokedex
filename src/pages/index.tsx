@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from "next"
+import { NextSeo } from "next-seo"
 import { api } from "services/api"
 import { HomeTemplate } from "templates/Home"
 
@@ -54,6 +55,24 @@ interface IHomeProps {
 export default function Home({ pokemons }: IHomeProps) {
   return (
     <>
+      <NextSeo
+        title="Pokedex"
+        description="What pokemon are you looking for?"
+        canonical="https://pokedex-official.vercel.app/"
+        openGraph={{
+          url: "https://pokedex-official.vercel.app/",
+          title: "Pokedex",
+          description: "What pokemon are you looking for?",
+          images: [
+            {
+              url: "https://fiora.vercel.app/img/gengar.jpg",
+              width: 500,
+              height: 386,
+              alt: "Gengar"
+            }
+          ]
+        }}
+      />
       <HomeTemplate pokemons={pokemons} />
     </>
   )
